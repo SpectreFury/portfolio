@@ -1,6 +1,7 @@
 import React from "react";
 import { Sun, Moon } from "lucide-react";
 import { useDarkModeStore } from "../store/useDarkMode";
+import { motion } from "motion/react";
 
 const DarkModeButton = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
@@ -12,14 +13,20 @@ const DarkModeButton = () => {
 };
 
 const Navbar = () => {
+  const darkMode = useDarkModeStore((state) => state.darkMode);
+
   return (
-    <nav className="py-2 px-5 flex justify-between">
+    <motion.nav
+      className={`py-5 px-5 flex justify-between w-full ${
+        darkMode ? "bg-slate-200" : "bg-gray-200"
+      }`}
+    >
       <div className="flex items-center gap-2">
-        <div className="font-medium">Ayush Soni</div>
+        <div className="font-medium text-slate-600">Ayush Soni</div>
         <div className="text-gray-500">| Software Developer</div>
       </div>
       <DarkModeButton />
-    </nav>
+    </motion.nav>
   );
 };
 
