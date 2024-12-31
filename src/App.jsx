@@ -10,7 +10,9 @@ function App() {
   const darkMode = useDarkModeStore((state) => state.darkMode);
 
   return (
-    <main className={`w-full h-screen ${darkMode ? "bg-[#1d1d1d]" : "#f1f1f1"}`}>
+    <main
+      className={`w-full h-screen ${darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1"}`}
+    >
       <Navbar />
       <Hero />
       <Projects />

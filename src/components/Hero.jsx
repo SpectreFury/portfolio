@@ -56,12 +56,7 @@ const Hero = () => {
         className={`flex flex-col items-center ${
           darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1]"
         }`}
-      >
-        <Button className={`${!darkMode ? "bg-white text-slate-700" : ""} `}>
-          Works
-          <ArrowDown size={20} />{" "}
-        </Button>
-      </div>
+      ></div>
     </section>
   );
 };
