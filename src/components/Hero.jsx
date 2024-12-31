@@ -8,12 +8,14 @@ import CanvasLoader from "../components/CanvasLoader";
 import Camera from "../components/Camera";
 import { Html, PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
+import { Button } from "../components/ui/moving-border";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
 
   return (
-    <section className="w-full h-screen">
+    <section className="w-full">
       <div
         className={`flex flex-col items-center pt-32 ${
           darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1]"
@@ -36,7 +38,7 @@ const Hero = () => {
           Creating work of art in the world of web.
         </motion.p>
       </div>
-      <Canvas>
+      <Canvas style={{ height: "500px" }}>
         <Suspense fallback={<CanvasLoader />}>
           <color
             attach="background"
@@ -46,10 +48,20 @@ const Hero = () => {
           <ambientLight intensity={0.1} color={"#FFFFFF"} />
           <directionalLight position={[10, 10, 10]} intensity={1} />
           <Camera>
-            <Computer position={[0, 1, 0]} rotation={[0, -1.5, -0.5]} />
+            <Computer position={[0, 0, 0]} rotation={[0, -1.5, -0.5]} />
           </Camera>
         </Suspense>
       </Canvas>
+      <div
+        className={`flex flex-col items-center ${
+          darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1]"
+        }`}
+      >
+        <Button className={`${!darkMode ? "bg-white text-slate-700" : ""} `}>
+          Works
+          <ArrowDown size={20} />{" "}
+        </Button>
+      </div>
     </section>
   );
 };
