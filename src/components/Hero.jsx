@@ -22,12 +22,15 @@ const Hero = () => {
         }`}
       >
         <motion.p
-          className="text-[50px] font-bold text-gray-300"
+          className="text-[50px] font-bold text-gray-300 "
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          A fellow web enthusiast
+          A fellow{" "}
+          <span className="bg-gradient-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
+            web enthusiast
+          </span>
         </motion.p>
         <motion.p
           className="text-[50px] font-bold text-gray-500"
@@ -38,7 +41,7 @@ const Hero = () => {
           Creating work of art in the world of web.
         </motion.p>
       </div>
-      <Canvas style={{ height: "500px" }}>
+      <Canvas style={{ height: "50rem" }}>
         <Suspense fallback={<CanvasLoader />}>
           <color
             attach="background"
