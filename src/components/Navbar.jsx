@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav
       className={`p-5 fixed top-0 left-0 w-full flex justify-between border-b z-50 ${
-        darkMode ? "border-zinc-800 bg-[#1d1d1d]" : "bg-[#f1f1f1]"
+        darkMode ? "border-zinc-800 bg-slate-950" : "bg-slate-50"
       }`}
     >
       <div className="flex items-center gap-2">

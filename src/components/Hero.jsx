@@ -18,7 +18,7 @@ const Hero = () => {
     <section className="w-full">
       <div
         className={`flex flex-col items-center pt-32 ${
-          darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1]"
+          darkMode ? "bg-slate-950" : "bg-slate-50"
         }`}
       >
         <motion.p
@@ -45,7 +45,7 @@ const Hero = () => {
         <Suspense fallback={<CanvasLoader />}>
           <color
             attach="background"
-            args={darkMode ? ["#1d1d1d"] : ["#f1f1f1"]}
+            args={darkMode ? ["#020617"] : ["#f8fafc"]}
           />
           <PerspectiveCamera makeDefault position={[0, 0, 0]} />
           <ambientLight intensity={0.1} color={"#FFFFFF"} />

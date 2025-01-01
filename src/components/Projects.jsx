@@ -9,14 +9,19 @@ const Projects = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
 
   return (
-    <section className={`${darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1]"}`}>
+    <section className={`${darkMode ? "bg-slate-950" : "bg-slate-50"}`}>
       <div className="container m-auto">
         <div
           className={`text-5xl max-w-fit font-bold bg-gradient-to-r from-emerald-300 to-emerald-600 text-transparent bg-clip-text`}
         >
           My Projects
         </div>
-        <div className="container m-auto flex mt-20 gap-10">
+        <motion.div
+          className="container m-auto flex mt-20 gap-10"
+          initial={{ x: -500, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="max-w-[750px] px-10 py-5 rounded text-white">
             <h1 className="text-3xl font-bold text-slate-100">Reddit</h1>
             <p className="mt-5 text-lg font-medium text-gray-300">
@@ -31,18 +36,23 @@ const Projects = () => {
               <Tag text="Firebase" imageUrl="/icons/firebase.png" />
             </ul>
           </div>
-          <motion.div className="max-w-[500px] h-full rounded overflow-hidden">
+          <div className="max-w-[500px] h-full rounded overflow-hidden">
             <GlareCard>
               <img src="/reddit.png" />
             </GlareCard>
-          </motion.div>
-        </div>
-        <div className="container m-auto flex mt-20 gap-10">
-          <motion.div className="max-w-[500px] rounded overflow-hidden mx-10">
+          </div>
+        </motion.div>
+        <motion.div
+          className="container m-auto flex mt-20 gap-10"
+          initial={{ x: 500, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="max-w-[500px] rounded overflow-hidden mx-10">
             <GlareCard>
               <img src="/lobby.png" />
             </GlareCard>
-          </motion.div>
+          </div>
           <div className="max-w-[750px] py-5 rounded text-white">
             <h1 className="text-3xl font-bold text-slate-100">Lobby</h1>
             <p className="mt-5 text-lg font-medium text-gray-300">
@@ -56,8 +66,13 @@ const Projects = () => {
               <Tag text="Firebase" imageUrl="/icons/firebase.png" />
             </ul>
           </div>
-        </div>
-        <div className="container m-auto flex mt-20 gap-10">
+        </motion.div>
+        <motion.div
+          className="container m-auto flex mt-20 gap-10"
+          initial={{ x: -500, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="max-w-[750px] px-10 py-5 rounded text-white">
             <h1 className="text-3xl font-bold text-slate-100">Querify</h1>
             <p className="mt-5 text-lg font-medium text-gray-300">
@@ -72,12 +87,12 @@ const Projects = () => {
               <Tag text="Firebase" imageUrl="/icons/firebase.png" />
             </ul>
           </div>
-          <motion.div className="max-w-[500px] h-full rounded overflow-hidden">
+          <div className="max-w-[500px] h-full rounded overflow-hidden">
             <GlareCard>
               <img src="/querify.png" />
             </GlareCard>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
         <div className="flex justify-center items-center h-[20rem] flex-col px-4">
           <p className="text-slate-200 dark:text-neutral-400 text-xl md:text-5xl max-w-5xl text-left mb-10">
             I make a lot of stuff so visit my{"  "}

@@ -25,7 +25,7 @@ export const Timeline = ({ data, darkMode }) => {
   return (
     <div
       className={`w-full ${
-        darkMode ? "bg-neutral-950" : "bg-white"
+        darkMode ? "bg-slate-950" : "bg-slate-50"
       } font-sans md:px-10`}
       ref={containerRef}
     >

@@ -12,12 +12,12 @@ function App() {
 
   return (
     <main
-      className={`w-full h-screen ${darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1"}`}
+      className={`w-full h-screen ${darkMode ? "bg-slate-950" : "bg-slate-50"}`}
     >
       <Navbar />
       <Hero />
       <Projects />
-      <Experience/>
+      <Experience />
     </main>
   );
 }
