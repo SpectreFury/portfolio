@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 
 import { useDarkModeStore } from "./store/useDarkMode";
 
@@ -18,6 +19,7 @@ function App() {
       <Hero />
       <Projects />
       <Experience />
+      <Footer/>
     </main>
   );
 }
