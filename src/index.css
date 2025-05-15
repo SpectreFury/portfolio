@@ -4,12 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-  --color-mint-500: oklch(0.72, 0.11, 178);
-}
-
 :root {
-  font-family: "Poppins";
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

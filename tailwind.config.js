@@ -9,7 +9,14 @@ const svgToDataUri = require("mini-svg-data-uri");
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary-light": "#334155",
+        "primary-dark": "#cbd5e1",
+        "secondary-light": "#6b7280",
+        "secondary-dark": "#d1d5db",
+      },
+    },
   },
   plugins: [
     addVariablesForColors,
@@ -36,6 +43,7 @@ export default {
       );
     },
   ],
+  darkMode: "class",
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

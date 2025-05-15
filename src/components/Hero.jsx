@@ -10,6 +10,7 @@ import { Html, PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
 import { Button } from "../components/ui/moving-border";
 import { ArrowDown } from "lucide-react";
+import { ContainerTextFlip } from "../components/ui/container-text-flip";
 
 const Hero = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
@@ -18,27 +19,39 @@ const Hero = () => {
     <section className="w-full">
       <div
         className={`flex flex-col items-center pt-32 ${
-          darkMode ? "bg-slate-950" : "bg-slate-50"
+          darkMode ? "bg-gray-950" : "bg-slate-50"
         }`}
       >
         <motion.p
-          className="text-[50px] font-bold text-gray-300 "
+          className={`text-[50px] font-bold ${
+            darkMode ? "text-secondary-dark" : "text-secondary-light"
+          }`}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 2 }}
         >
           A fellow{" "}
-          <span className="bg-gradient-to-r from-lime-500 to-teal-500 bg-clip-text text-transparent">
-            web enthusiast
-          </span>
+          <ContainerTextFlip
+            interval={4000}
+            words={[
+              "full stack dev",
+              "software engineer",
+              "vibe coder",
+              "vim enthusiast",
+            ]}
+            className="shadow-none"
+            textClassName="text-[50px] text-emerald-500"
+          />
         </motion.p>
         <motion.p
-          className="text-[50px] font-bold text-gray-500"
+          className={`text-[50px] font-bold ${
+            darkMode ? "text-secondary-dark" : "text-secondary-light"
+          }`}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 3 }}
         >
-          Creating work of art in the world of web.
+          creating works of art in the world of web.
         </motion.p>
       </div>
       <Canvas style={{ height: "50rem" }}>
@@ -49,7 +62,7 @@ const Hero = () => {
           />
           <PerspectiveCamera makeDefault position={[0, 0, 0]} />
           <ambientLight intensity={0.1} color={"#FFFFFF"} />
-          <directionalLight position={[10, 10, 10]} intensity={1} />
+          <directionalLight position={[10, 10, 10]} intensity={1.5} />
           <Camera>
             <Computer position={[0, 0, 0]} rotation={[0, -1.5, -0.5]} />
           </Camera>

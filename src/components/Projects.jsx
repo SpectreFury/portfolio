@@ -1,99 +1,70 @@
-import React from "react";
 import { useDarkModeStore } from "../store/useDarkMode";
-import { motion } from "motion/react";
-import Tag from "./Tag";
-import { GlareCard } from "./ui/glare-card";
-import { LinkPreview } from "./ui/link-preview";
+import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
+import GridItem from "../components/GridItem";
+import { Box, Search, Settings, Sparkles, User, Hammer } from "lucide-react";
+
+import AboutCard from "./cards/about";
+import ToolsCard from "./cards/tools";
 
 const Projects = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
 
   return (
-    <section className={`${darkMode ? "bg-slate-950" : "bg-slate-50"}`}>
-      <div className="container m-auto">
-        <div
-          className={`text-5xl max-w-fit font-bold bg-gradient-to-r from-emerald-300 to-emerald-600 text-transparent bg-clip-text`}
-        >
-          My Projects
-        </div>
-        <motion.div
-          className="container m-auto flex mt-20 gap-10"
-          initial={{ x: -500, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-[750px] px-10 py-5 rounded text-white">
-            <h1 className="text-3xl font-bold text-gray-600">Reddit</h1>
-            <p className="mt-5 text-lg font-medium text-gray-500">
-              A clone of reddit that incorporates all the major instead the
-              actual app. It has an amazing UI which is mobile responsive and
-              uses latest Chakra UI components to model different parts, this is
-              a full-stack application.
-            </p>
-            <ul className="flex mt-5 gap-3">
-              <Tag text="Next.js" imageUrl="/icons/next-js.png" />
-              <Tag text="Typescript" imageUrl="/icons/typescript.png" />
-              <Tag text="Firebase" imageUrl="/icons/firebase.png" />
-            </ul>
-          </div>
-          <div className="max-w-[500px] h-full rounded overflow-hidden">
-            <GlareCard>
-              <img src="/reddit.png" />
-            </GlareCard>
-          </div>
-        </motion.div>
-        <motion.div
-          className="container m-auto flex mt-20 gap-10"
-          initial={{ x: 500, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-[500px] rounded overflow-hidden mx-10">
-            <GlareCard>
-              <img src="/lobby.png" />
-            </GlareCard>
-          </div>
-          <div className="max-w-[750px] py-5 rounded text-white">
-            <h1 className="text-3xl font-bold text-gray-600">Lobby</h1>
-            <p className="mt-5 text-lg font-medium text-gray-500">
-              I wanted to learn how discord works and so I created Lobby. I used
-              WebSockets and other browser APIs to let users talk to each other
-              using their voice as well as through text messages.
-            </p>
-            <ul className="flex mt-5 gap-3">
-              <Tag text="Next.js" imageUrl="/icons/next-js.png" />
-              <Tag text="Typescript" imageUrl="/icons/typescript.png" />
-              <Tag text="Firebase" imageUrl="/icons/firebase.png" />
-            </ul>
-          </div>
-        </motion.div>
-        <motion.div
-          className="container m-auto flex mt-20 gap-10"
-          initial={{ x: -500, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-[750px] px-10 py-5 rounded text-white">
-            <h1 className="text-3xl font-bold text-slate-600">Querify</h1>
-            <p className="mt-5 text-lg font-medium text-gray-500">
-              This is my final university project where we tried to make life
-              easier for people who don't know how to interact with databases
-              using query languages. I used NLP to talk to the user and generate
-              queries
-            </p>
-            <ul className="flex mt-5 gap-3">
-              <Tag text="Next.js" imageUrl="/icons/next-js.png" />
-              <Tag text="Typescript" imageUrl="/icons/typescript.png" />
-              <Tag text="Firebase" imageUrl="/icons/firebase.png" />
-            </ul>
-          </div>
-          <div className="max-w-[500px] h-full rounded overflow-hidden">
-            <GlareCard>
-              <img src="/querify.png" />
-            </GlareCard>
-          </div>
-        </motion.div>
-      </div>
+    <section
+      id="about"
+      className={`flex justify-center items-center bg-slate-50 dark:bg-slate-950`}
+    >
+      <ul className="max-w-6xl grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+        <GridItem
+          area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
+          icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
+          title="Do things the right way"
+          description="Running out of copy so I'll write anything."
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        />
+
+        <GridItem
+          area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
+          icon={
+            <Settings className="h-4 w-4 text-black dark:text-neutral-400" />
+          }
+          title="The best AI code editor ever."
+          description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        />
+        <AboutCard
+          area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
+          icon={<User className="h-4 w-4 text-black dark:text-neutral-400" />}
+          title="About me"
+          description="I'm a software developer based in Bhopal and I love to work on challenging problems and brainstorming solutions. I'm a really passionate person and I really do love programming, so I try my best to make things as efficient and beautiful as I can. In my free time, I enjoy making game engines and learning about OpenGL and also enjoy playing video games."
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.25 }}
+        />
+        <ToolsCard
+          area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
+          icon={<Hammer className="h-4 w-4 text-black dark:text-neutral-400" />}
+          title="Tools I use"
+          description=""
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        />
+
+        <GridItem
+          area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
+          icon={<Search className="h-4 w-4 text-black dark:text-neutral-400" />}
+          title="Coming soon on Aceternity UI"
+          description="I'm writing the code as I record this, no shit."
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+        />
+      </ul>
     </section>
   );
 };

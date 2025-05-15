@@ -1,15 +1,20 @@
-import React from "react";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-import Experience from "./components/Experience";
-import Footer from "./components/Footer";
 
 import { useDarkModeStore } from "./store/useDarkMode";
+import { useEffect } from "react";
 
 function App() {
   const darkMode = useDarkModeStore((state) => state.darkMode);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <main
@@ -18,8 +23,6 @@ function App() {
       <Navbar />
       <Hero />
       <Projects />
-      <Experience />
-      <Footer/>
     </main>
   );
 }
