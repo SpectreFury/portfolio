@@ -1,40 +1,36 @@
 import { motion } from "motion/react";
 import { GlowingEffect } from "../ui/glowing-effect";
-import Tag from "../Tag";
+import Link from "../Link";
 
-import NeovimIcon from "../../assets/neovim.svg";
-import VSCodeIcon from "../../assets/vscode.svg";
-import FigmaIcon from "../../assets/figma.svg";
-import GitIcon from "../../assets/git.svg";
+import LinkedInIcon from "../../assets/linkedin.svg";
+import GithubIcon from "../../assets/github.svg";
+import XIcon from "../../assets/x.svg";
+import LeetcodeIcon from "../../assets/leetcode.svg";
 
-const tags = [
+const links = [
   {
-    link: "https://neovim.io",
-    imageUrl: NeovimIcon,
+    text: "LinkedIn",
+    url: "https://www.linkedin.com/in/ayushsoni/",
+    imageUrl: LinkedInIcon,
   },
   {
-    link: "https://code.visualstudio.com",
-    imageUrl: VSCodeIcon,
+    text: "GitHub",
+    url: "https://github.com/SpectreFury",
+    imageUrl: GithubIcon,
   },
   {
-    link: "https://www.figma.com",
-    imageUrl: FigmaIcon,
+    text: "Twitter",
+    url: "https://x.com/spectrefuryiwnl",
+    imageUrl: XIcon,
   },
   {
-    link: "https://git-scm.com",
-    imageUrl: GitIcon,
+    text: "Leetcode",
+    url: "https://leetcode.com/u/SpectreFury",
+    imageUrl: LeetcodeIcon,
   },
 ];
 
-const ToolsCard = ({
-  initial,
-  whileInView,
-  transition,
-  area,
-  icon,
-  title,
-  description,
-}) => {
+const LinksCard = ({ initial, whileInView, transition, area, icon, title }) => {
   return (
     <motion.li
       className={`min-h-[14rem] list-none ${area}`}
@@ -59,11 +55,14 @@ const ToolsCard = ({
               <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white">
                 {title}
               </h3>
-              <ul className="flex">
-                {tags.map((tag, index) => (
-                  <li key={index}>
-                    <Tag link={tag.link} imageUrl={tag.imageUrl} />
-                  </li>
+              <ul className="grid grid-cols-2 gap-2">
+                {links.map((link, index) => (
+                  <Link
+                    key={index}
+                    text={link.text}
+                    link={link.url}
+                    imageUrl={link.imageUrl}
+                  />
                 ))}
               </ul>
             </div>
@@ -74,4 +73,4 @@ const ToolsCard = ({
   );
 };
 
-export default ToolsCard;
+export default LinksCard;

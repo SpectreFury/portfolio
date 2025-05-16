@@ -17,7 +17,7 @@ const AboutCard = ({
       whileInView={whileInView}
       transition={transition}
     >
-      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
+      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-gradient-to-b from-white/60 via-slate-100/60 to-emerald-100/40 dark:from-slate-900/60 dark:via-slate-950/60 dark:to-emerald-900/30">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -34,7 +34,7 @@ const AboutCard = ({
               <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white">
                 {title}
               </h3>
-              <h2 className="font-sans text-sm/[1.125rem] text-neutral-700 md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
+              <h2 className="font-sans text-base/[1.5rem] text-neutral-700 md:text-lg/[1.75rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
                 {description}
               </h2>
             </div>

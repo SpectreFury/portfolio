@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Projects from "./components/Projects";
 
 import { useDarkModeStore } from "./store/useDarkMode";
 import { useEffect } from "react";
+import Details from "./components/Details";
 
 function App() {
   const darkMode = useDarkModeStore((state) => state.darkMode);
@@ -22,7 +22,7 @@ function App() {
     >
       <Navbar />
       <Hero />
-      <Projects />
+      <Details />
     </main>
   );
 }

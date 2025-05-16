@@ -10,9 +10,18 @@ const DarkModeButton = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className={`border p-2 rounded text-primary-light dark:text-primary-dark dark:border-gray-700`}
+      className={`border p-2 rounded w-10 h-10 aspect-square flex items-center justify-center text-primary-light dark:text-primary-dark dark:border-gray-700 transition-colors duration-300`}
     >
-      {darkMode ? <Moon /> : <Sun />}
+      <motion.span
+        key={darkMode ? "moon" : "sun"}
+        initial={{ rotate: 90, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        exit={{ rotate: -90, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        style={{ display: "inline-block" }}
+      >
+        {darkMode ? <Moon /> : <Sun />}
+      </motion.span>
     </button>
   );
 };
@@ -22,20 +31,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`p-5 fixed top-0 left-0 w-full flex justify-between border-b z-50 bg-slate-50 dark:bg-slate-950 dark:border-gray-800`}
+      className={`p-3 md:p-5 fixed top-0 left-0 w-full flex flex-row items-center justify-between border-b z-50 bg-slate-50 dark:bg-slate-950 dark:border-gray-800`}
     >
       <div className="flex items-center gap-2">
         <div
           className={`font-bold ${
             darkMode ? "text-primary-dark" : "text-primary-light"
-          }`}
+          } `}
         >
           Ayush Soni
         </div>
         <div
           className={`text-sm ${
             darkMode ? "text-slate-300" : "text-slate-700"
-          }`}
+          } `}
         >
           | Software Developer
         </div>

@@ -1,31 +1,40 @@
-import React, { useState, useRef, Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { useDarkModeStore } from "../store/useDarkMode";
-import { Leva, useControls } from "leva";
 import { Computer } from "../components/Computer";
 import CanvasLoader from "../components/CanvasLoader";
 import Camera from "../components/Camera";
-import { Html, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { motion } from "motion/react";
-import { Button } from "../components/ui/moving-border";
-import { ArrowDown } from "lucide-react";
 import { ContainerTextFlip } from "../components/ui/container-text-flip";
 
 const Hero = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
+  const [canvasHeight, setCanvasHeight] = React.useState(
+    window.innerWidth < 768 ? "18rem" : "50rem"
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCanvasHeight(window.innerWidth < 768 ? "18rem" : "50rem");
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section className="w-full">
       <div
-        className={`flex flex-col items-center pt-32 ${
+        className={`flex flex-col items-center pt-20 md:pt-32 px-4 md:px-0 ${
           darkMode ? "bg-gray-950" : "bg-slate-50"
         }`}
       >
         <motion.p
-          className={`text-[50px] font-bold ${
+          className={`text-[2rem] md:text-[50px] font-bold ${
             darkMode ? "text-secondary-dark" : "text-secondary-light"
-          }`}
+          } text-center leading-tight md:leading-[1.1]`}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 2 }}
@@ -40,13 +49,13 @@ const Hero = () => {
               "vim enthusiast",
             ]}
             className="shadow-none"
-            textClassName="text-[50px] text-emerald-500"
+            textClassName="text-[2rem] md:text-[50px] text-emerald-500"
           />
         </motion.p>
         <motion.p
-          className={`text-[50px] font-bold ${
+          className={`text-[2rem] md:text-[50px] font-bold ${
             darkMode ? "text-secondary-dark" : "text-secondary-light"
-          }`}
+          } text-center leading-tight md:leading-[1.1]`}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 3 }}
@@ -54,7 +63,13 @@ const Hero = () => {
           creating works of art in the world of web.
         </motion.p>
       </div>
-      <Canvas style={{ height: "50rem" }}>
+      <Canvas
+        style={{
+          height: canvasHeight,
+          width: "100vw",
+          maxWidth: "100%",
+        }}
+      >
         <Suspense fallback={<CanvasLoader />}>
           <color
             attach="background"
