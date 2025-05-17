@@ -37,6 +37,7 @@ const LinksCard = ({ initial, whileInView, transition, area, icon, title }) => {
       initial={initial}
       whileInView={whileInView}
       transition={transition}
+      viewport={{ once: true }}
     >
       <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-gradient-to-b from-white/60 via-slate-100/60 to-emerald-100/40 dark:from-slate-900/60 dark:via-slate-950/60 dark:to-emerald-900/30">
         <GlowingEffect

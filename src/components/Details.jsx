@@ -1,4 +1,3 @@
-import { useDarkModeStore } from "../store/useDarkMode";
 import { Book, User, Hammer, Link } from "lucide-react";
 
 import AboutCard from "./cards/about";
@@ -7,14 +6,12 @@ import LinksCard from "./cards/links";
 import LanguagesCard from "./cards/languages";
 
 const Details = () => {
-  const darkMode = useDarkModeStore((state) => state.darkMode);
-
   return (
     <section
       id="about"
-      className={`flex justify-center items-center bg-slate-50 dark:bg-slate-950 `}
+      className={`flex justify-center items-center bg-slate-50 dark:bg-slate-950`}
     >
-      <ul className="max-w-6xl grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+      <ul className="max-w-6xl grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-2 lg:gap-4 px-4 md:px-0">
         <AboutCard
           area="md:[grid-area:2/1/3/7] xl:[grid-area:1/1/3/5]"
           icon={<User className="h-4 w-4 text-black dark:text-neutral-400" />}

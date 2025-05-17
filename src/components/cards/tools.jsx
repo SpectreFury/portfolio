@@ -1,46 +1,14 @@
 import { motion } from "motion/react";
 import { GlowingEffect } from "../ui/glowing-effect";
-import Tag from "../Tag";
 
-import NeovimIcon from "../../assets/neovim.svg";
-import VSCodeIcon from "../../assets/vscode.svg";
-import FigmaIcon from "../../assets/figma.svg";
-import GitIcon from "../../assets/git.svg";
-
-const tags = [
-  {
-    link: "https://neovim.io",
-    imageUrl: NeovimIcon,
-  },
-  {
-    link: "https://code.visualstudio.com",
-    imageUrl: VSCodeIcon,
-  },
-  {
-    link: "https://www.figma.com",
-    imageUrl: FigmaIcon,
-  },
-  {
-    link: "https://git-scm.com",
-    imageUrl: GitIcon,
-  },
-];
-
-const ToolsCard = ({
-  initial,
-  whileInView,
-  transition,
-  area,
-  icon,
-  title,
-  description,
-}) => {
+const ToolsCard = ({ initial, whileInView, transition, area, icon, title }) => {
   return (
     <motion.li
       className={`min-h-[14rem] list-none ${area}`}
       initial={initial}
       whileInView={whileInView}
       transition={transition}
+      viewport={{ once: true }}
     >
       <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-gradient-to-b from-white/60 via-slate-100/60 to-emerald-100/40 dark:from-slate-900/60 dark:via-slate-950/60 dark:to-emerald-900/30">
         <GlowingEffect
@@ -59,12 +27,47 @@ const ToolsCard = ({
               <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white">
                 {title}
               </h3>
-              <ul className="flex">
-                {tags.map((tag, index) => (
-                  <li key={index}>
-                    <Tag link={tag.link} imageUrl={tag.imageUrl} />
-                  </li>
-                ))}
+              <ul className="flex flex-row flex-wrap gap-2 mt-2">
+                <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
+                  <img
+                    src="/src/assets/neovim.svg"
+                    alt="Neovim"
+                    className="h-5 w-5 rounded"
+                  />
+                  <span className="font-medium text-neutral-800 dark:text-neutral-200">
+                    Neovim
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
+                  <img
+                    src="/src/assets/vscode.svg"
+                    alt="VS Code"
+                    className="h-5 w-5 rounded"
+                  />
+                  <span className="font-medium text-neutral-800 dark:text-neutral-200">
+                    VS Code
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
+                  <img
+                    src="/src/assets/figma.svg"
+                    alt="Figma"
+                    className="h-5 w-5 rounded"
+                  />
+                  <span className="font-medium text-neutral-800 dark:text-neutral-200">
+                    Figma
+                  </span>
+                </li>
+                <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
+                  <img
+                    src="/src/assets/git.svg"
+                    alt="Git"
+                    className="h-5 w-5 rounded"
+                  />
+                  <span className="font-medium text-neutral-800 dark:text-neutral-200">
+                    Git
+                  </span>
+                </li>
               </ul>
             </div>
           </div>

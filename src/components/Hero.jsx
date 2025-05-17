@@ -27,14 +27,10 @@ const Hero = () => {
   return (
     <section className="w-full">
       <div
-        className={`flex flex-col items-center pt-20 md:pt-32 px-4 md:px-0 ${
-          darkMode ? "bg-gray-950" : "bg-slate-50"
-        }`}
+        className={`flex flex-col items-center pt-20 md:pt-32 px-4 md:px-0 bg-slate-50 dark:bg-slate-950`}
       >
         <motion.p
-          className={`text-[2rem] md:text-[50px] font-bold ${
-            darkMode ? "text-secondary-dark" : "text-secondary-light"
-          } text-center leading-tight md:leading-[1.1]`}
+          className={`text-[2rem] md:text-[50px] font-bold text-secondary-light dark:text-secondary-dark  text-center leading-tight md:leading-[1.1]`}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 2 }}
@@ -53,9 +49,7 @@ const Hero = () => {
           />
         </motion.p>
         <motion.p
-          className={`text-[2rem] md:text-[50px] font-bold ${
-            darkMode ? "text-secondary-dark" : "text-secondary-light"
-          } text-center leading-tight md:leading-[1.1]`}
+          className={`text-[2rem] md:text-[50px] font-bold text-secondary-light dark:text-secondary-dark text-center leading-tight md:leading-[1.1]`}
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1, delay: 3 }}
@@ -76,18 +70,24 @@ const Hero = () => {
             args={darkMode ? ["#020617"] : ["#f8fafc"]}
           />
           <PerspectiveCamera makeDefault position={[0, 0, 0]} />
-          <ambientLight intensity={0.1} color={"#FFFFFF"} />
-          <directionalLight position={[10, 10, 10]} intensity={1.5} />
+          {/* Improved Lighting */}
+          <ambientLight intensity={0.5} color="#ffffff" />
+          <directionalLight
+            position={[5, 10, 10]}
+            intensity={1.8}
+            color="#fffbe6"
+          />
+          <directionalLight
+            position={[-5, 5, -5]}
+            intensity={1}
+            color="#ffe4b5"
+          />
+          <pointLight position={[0, 5, 5]} intensity={0.5} color="#fbbf24" />
           <Camera>
             <Computer position={[0, 0, 0]} rotation={[0, -1.5, -0.5]} />
           </Camera>
         </Suspense>
       </Canvas>
-      <div
-        className={`flex flex-col items-center ${
-          darkMode ? "bg-[#1d1d1d]" : "bg-[#f1f1f1]"
-        }`}
-      ></div>
     </section>
   );
 };

@@ -71,8 +71,9 @@ const LanguagesCard = ({
       initial={initial}
       whileInView={whileInView}
       transition={transition}
+      viewport={{ once: true }}
     >
-      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-gradient-to-b from-white/60 via-slate-100/60 to-emerald-100/40 dark:from-slate-900/60 dark:via-slate-950/60 dark:to-emerald-900/30">
+      <div className="relative min-h-[14rem] rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-gradient-to-b from-white/60 via-slate-100/60 to-emerald-100/40 dark:from-slate-900/60 dark:via-slate-950/60 dark:to-emerald-900/30">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -80,7 +81,7 @@ const LanguagesCard = ({
           proximity={64}
           inactiveZone={0.01}
         />
-        <div className="border-0.75 relative flex h-full flex-col gap-6 overflow-hidden rounded-xl p-6 md:p-6">
+        <div className="border-0.75 relative flex flex-col gap-6 overflow-visible rounded-xl p-6 md:p-6">
           <div className="relative flex gap-2">
             <div className="w-fit rounded-lg border border-gray-600 p-2">
               {icon}
@@ -89,7 +90,7 @@ const LanguagesCard = ({
               {title}
             </h3>
           </div>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex flex-col md:flex-row gap-4 flex-wrap">
             <div className="border border-gray-300 dark:border-gray-700 rounded-xl p-3 bg-white/40 dark:bg-neutral-900/40 shadow-sm flex-1 min-w-[180px]">
               <p className="font-sans text-sm/[1.125rem] text-neutral-700 md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold mb-2">
                 Frontend

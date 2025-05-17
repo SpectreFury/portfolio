@@ -34,18 +34,10 @@ const Navbar = () => {
       className={`p-3 md:p-5 fixed top-0 left-0 w-full flex flex-row items-center justify-between border-b z-50 bg-slate-50 dark:bg-slate-950 dark:border-gray-800`}
     >
       <div className="flex items-center gap-2">
-        <div
-          className={`font-bold ${
-            darkMode ? "text-primary-dark" : "text-primary-light"
-          } `}
-        >
+        <div className={`font-bold text-primary-light dark:text-primary-dark`}>
           Ayush Soni
         </div>
-        <div
-          className={`text-sm ${
-            darkMode ? "text-slate-300" : "text-slate-700"
-          } `}
-        >
+        <div className={`text-sm text-slate-700 dark:text-slate-300`}>
           | Software Developer
         </div>
       </div>
