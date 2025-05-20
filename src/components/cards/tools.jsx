@@ -1,6 +1,11 @@
 import { motion } from "motion/react";
 import { GlowingEffect } from "../ui/glowing-effect";
 
+import VSCodeIcon from "/src/assets/vscode.svg";
+import NeovimIcon from "/src/assets/neovim.svg";
+import FigmaIcon from "/src/assets/figma.svg";
+import GitIcon from "/src/assets/git.svg";
+
 const ToolsCard = ({ initial, whileInView, transition, area, icon, title }) => {
   return (
     <motion.li
@@ -30,7 +35,7 @@ const ToolsCard = ({ initial, whileInView, transition, area, icon, title }) => {
               <ul className="flex flex-row flex-wrap gap-2 mt-2">
                 <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
                   <img
-                    src="/src/assets/neovim.svg"
+                    src={NeovimIcon}
                     alt="Neovim"
                     className="h-5 w-5 rounded"
                   />
@@ -40,7 +45,7 @@ const ToolsCard = ({ initial, whileInView, transition, area, icon, title }) => {
                 </li>
                 <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
                   <img
-                    src="/src/assets/vscode.svg"
+                    src={VSCodeIcon}
                     alt="VS Code"
                     className="h-5 w-5 rounded"
                   />
@@ -50,7 +55,7 @@ const ToolsCard = ({ initial, whileInView, transition, area, icon, title }) => {
                 </li>
                 <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
                   <img
-                    src="/src/assets/figma.svg"
+                    src={FigmaIcon}
                     alt="Figma"
                     className="h-5 w-5 rounded"
                   />
@@ -59,11 +64,7 @@ const ToolsCard = ({ initial, whileInView, transition, area, icon, title }) => {
                   </span>
                 </li>
                 <li className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/60 dark:bg-neutral-900/60 border border-slate-200 dark:border-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors w-fit text-sm">
-                  <img
-                    src="/src/assets/git.svg"
-                    alt="Git"
-                    className="h-5 w-5 rounded"
-                  />
+                  <img src={GitIcon} alt="Git" className="h-5 w-5 rounded" />
                   <span className="font-medium text-neutral-800 dark:text-neutral-200">
                     Git
                   </span>
