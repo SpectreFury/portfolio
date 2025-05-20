@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sun, Moon } from "lucide-react";
 import { useDarkModeStore } from "../store/useDarkMode";
 import { motion } from "motion/react";
+import { PopupButton, PopupWidget } from "react-calendly";
 
 const DarkModeButton = () => {
   const darkMode = useDarkModeStore((state) => state.darkMode);
@@ -41,7 +42,15 @@ const Navbar = () => {
           | Software Developer
         </div>
       </div>
-      <DarkModeButton />
+      <div className="flex items-center gap-4">
+        <PopupButton
+          url="https://calendly.com/soni-ayush-2212/30min"
+          rootElement={document.getElementById("root")}
+          text="Book a call"
+          className="border p-2 rounded-full w-32 h-10 flex items-center justify-center text-primary-light dark:text-primary-dark dark:border-gray-700 transition-colors duration-300"
+        />
+        <DarkModeButton />
+      </div>
     </nav>
   );
 };
