@@ -10,7 +10,7 @@ import LeetcodeIcon from "../../assets/leetcode.svg";
 const links = [
   {
     text: "LinkedIn",
-    url: "https://www.linkedin.com/in/ayushsoni/",
+    url: "https://www.linkedin.com/in/ayushsoni2212",
     imageUrl: LinkedInIcon,
   },
   {
