@@ -58,7 +58,7 @@ export const projects: Project[] = [
     blurb:
       "Document intelligence with RAG for real-time QnA over uploads, with async chunking and embeddings using FastAPI and Celery.",
     stack: ["Next.js", "TypeScript", "FastAPI", "Celery", "PostgreSQL"],
-    github: "https://github.com/SpectreFury",
+    github: "https://github.com/SpectreFury/askpdf",
     image: "/pdf-qa-workspace.png",
     imageAlt: "AskPDF document QnA workspace preview",
   },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     blurb:
       "Adaptive HLS streaming with FFmpeg transcoding fanned out to BullMQ workers for low-latency, fault-tolerant processing.",
     stack: ["Next.js", "Node.js", "MongoDB", "BullMQ", "Docker"],
-    github: "https://github.com/SpectreFury",
+    github: "https://github.com/SpectreFury/youtube-streaming",
   },
 ];
 

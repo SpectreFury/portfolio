@@ -49,7 +49,7 @@ export function Bento() {
           <p className="mt-0.5 font-mono text-micro font-semibold text-primary">
             {profile.role}
           </p>
-          <p className="mt-1.5 line-clamp-3 text-lead text-muted-foreground">
+          <p className="mt-1.5 text-lead text-muted-foreground">
             {profile.tagline}
           </p>
         </Card>
@@ -108,7 +108,7 @@ export function Bento() {
                 <p className="mt-px font-mono text-tiny text-muted-foreground">
                   {job.period} · {job.location}
                 </p>
-                <p className="mt-1 line-clamp-2 text-micro text-muted-foreground">
+                <p className="mt-1 text-micro text-muted-foreground">
                   {job.summary}
                 </p>
                 <div className="mt-1.5 flex flex-wrap gap-1">
@@ -202,7 +202,7 @@ export function Bento() {
                   </a>
                 </Button>
               </div>
-              <p className="mt-1 line-clamp-2 text-micro text-muted-foreground">
+              <p className="mt-1 text-micro text-muted-foreground">
                 {askPdf.blurb}
               </p>
               <div className="mt-auto flex flex-wrap gap-1 pt-1.5">
@@ -236,7 +236,7 @@ export function Bento() {
                   </a>
                 </Button>
               </div>
-              <p className="mt-1 line-clamp-2 text-micro text-muted-foreground">
+              <p className="mt-1 text-micro text-muted-foreground">
                 {streaming.blurb}
               </p>
               <div className="mt-auto flex flex-wrap gap-1 pt-1.5">
