@@ -96,9 +96,9 @@ export function Bento() {
           className="flex scroll-mt-20 flex-col pad-cell lg:col-span-7 lg:min-h-0 lg:overflow-hidden"
         >
           <Eyebrow>work</Eyebrow>
-          <div className="flex min-h-0 flex-col divide-y divide-border">
+          <div className="flex min-h-0 flex-1 flex-col justify-around divide-y divide-border">
             {experience.map((job) => (
-              <div key={job.company} className="py-1.5 first:pt-0 last:pb-0">
+              <div key={job.company} className="py-2 first:pt-0 last:pb-0">
                 <p className="text-cell font-semibold leading-tight">
                   {job.role}{" "}
                   <span className="font-normal text-gruv-blue">
