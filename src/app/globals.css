@@ -5,40 +5,7 @@
 :root {
   --radius: 0.625rem;
 
-  /* Gruvbox Light (default light tokens) */
-  --background: #fbf1c7;
-  --foreground: #3c3836;
-  --card: #f2e5bc;
-  --card-foreground: #3c3836;
-  --popover: #f2e5bc;
-  --popover-foreground: #3c3836;
-  --primary: #8a5a10;
-  --primary-foreground: #fbf1c7;
-  --secondary: #ebdbb2;
-  --secondary-foreground: #3c3836;
-  --muted: #ebdbb2;
-  --muted-foreground: #7c6f64;
-  --accent: #ebdbb2;
-  --accent-foreground: #3c3836;
-  --destructive: #cc241d;
-  --destructive-foreground: #fbf1c7;
-  --border: #d5c4a1;
-  --input: #d5c4a1;
-  --ring: #8a5a10;
-
-  /* Gruvbox accent helpers */
-  --gruv-red: #cc241d;
-  --gruv-green: #98971a;
-  --gruv-yellow: #d79921;
-  --gruv-blue: #458588;
-  --gruv-purple: #b16286;
-  --gruv-aqua: #689d6a;
-  --gruv-orange: #d65d0e;
-  --gruv-gray: #7c6f64;
-}
-
-.dark {
-  /* Gruvbox Dark */
+  /* Gruvbox Dark (default tokens) */
   --background: #1d2021;
   --foreground: #ebdbb2;
   --card: #282828;
@@ -59,6 +26,7 @@
   --input: #3c3836;
   --ring: #fabd2f;
 
+  /* Gruvbox accent helpers */
   --gruv-red: #fb4934;
   --gruv-green: #b8bb26;
   --gruv-yellow: #fabd2f;
@@ -67,6 +35,38 @@
   --gruv-aqua: #8ec07c;
   --gruv-orange: #fe8019;
   --gruv-gray: #928374;
+}
+
+.light {
+  /* Gruvbox Light */
+  --background: #fbf1c7;
+  --foreground: #3c3836;
+  --card: #f2e5bc;
+  --card-foreground: #3c3836;
+  --popover: #f2e5bc;
+  --popover-foreground: #3c3836;
+  --primary: #8a5a10;
+  --primary-foreground: #fbf1c7;
+  --secondary: #ebdbb2;
+  --secondary-foreground: #3c3836;
+  --muted: #ebdbb2;
+  --muted-foreground: #7c6f64;
+  --accent: #ebdbb2;
+  --accent-foreground: #3c3836;
+  --destructive: #cc241d;
+  --destructive-foreground: #fbf1c7;
+  --border: #d5c4a1;
+  --input: #d5c4a1;
+  --ring: #8a5a10;
+
+  --gruv-red: #cc241d;
+  --gruv-green: #98971a;
+  --gruv-yellow: #d79921;
+  --gruv-blue: #458588;
+  --gruv-purple: #b16286;
+  --gruv-aqua: #689d6a;
+  --gruv-orange: #d65d0e;
+  --gruv-gray: #7c6f64;
 }
 
 @theme inline {
