@@ -37,8 +37,8 @@ export function Bento() {
   const [askPdf, streaming] = projects;
 
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-3 pb-4 pt-3 lg:min-h-0 lg:overflow-hidden">
-      <div className="grid flex-1 grid-cols-1 gap-cell lg:min-h-0 lg:grid-cols-12 lg:grid-rows-[minmax(0,0.95fr)_minmax(0,1.05fr)_minmax(0,1.5fr)]">
+    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-3 pb-4 pt-3">
+      <div className="grid flex-1 grid-cols-1 gap-cell lg:grid-cols-12">
         {/* About: wide board */}
         <Card
           id="about"
@@ -281,15 +281,6 @@ export function Bento() {
           </div>
         </Card>
       </div>
-
-      <footer className="mt-2 flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-1 px-0.5 font-mono text-tiny text-muted-foreground">
-        <p>
-          © {new Date().getFullYear()} {profile.name}
-        </p>
-        <p>
-          <span className="text-primary">gruvbox</span> · next.js · shadcn
-        </p>
-      </footer>
     </main>
   );
 }
