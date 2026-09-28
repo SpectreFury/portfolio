@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { experience } from "@/lib/data";
 
@@ -22,37 +21,40 @@ export function Experience() {
   return (
     <section id="experience" className="scroll-mt-20 pt-16">
       <SectionHeading index="01" title="experience" />
-      <div className="space-y-4">
-        {experience.map((job) => (
-          <Card key={`${job.company}-${job.period}`}>
-            <CardHeader className="pb-3">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <div>
-                  <p className="font-semibold leading-tight">{job.role}</p>
-                  <p className="mt-1 text-sm text-gruv-blue">
-                    {job.company} · {job.location}
-                  </p>
-                </div>
-                <p className="font-mono text-xs text-muted-foreground">
-                  {job.period}
-                </p>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground marker:text-primary">
-                {job.points.map((point) => (
-                  <li key={point.slice(0, 32)}>{point}</li>
-                ))}
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {job.stack.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="font-mono text-[11px]">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+      <div className="overflow-hidden rounded-xl border border-border bg-card">
+        {experience.map((job, i) => (
+          <div
+            key={job.company}
+            className={
+              "p-5 sm:p-6" + (i > 0 ? " border-t border-border" : "")
+            }
+          >
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <p className="font-semibold leading-tight">
+                {job.role}{" "}
+                <span className="font-normal text-gruv-blue">
+                  @ {job.company}
+                </span>
+              </p>
+              <p className="font-mono text-xs text-muted-foreground">
+                {job.period}
+              </p>
+            </div>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              {job.summary}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {job.stack.map((tech) => (
+                <Badge
+                  key={tech}
+                  variant="secondary"
+                  className="font-mono text-[11px]"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

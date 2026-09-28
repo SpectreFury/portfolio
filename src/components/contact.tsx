@@ -8,7 +8,7 @@ import { profile } from "@/lib/data";
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 pt-16">
-      <SectionHeading index="05" title="contact" />
+      <SectionHeading index="04" title="contact" />
       <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
         <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
           Let&apos;s build something reliable.
