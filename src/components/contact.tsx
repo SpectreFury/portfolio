@@ -1,4 +1,4 @@
-import { ArrowUpRight, Globe, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Globe, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,7 +15,7 @@ export function Contact() {
         </h3>
         <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
           I&apos;m currently open to Software Development Engineer roles. The
-          fastest way to reach me is email — I usually reply within a day.
+          fastest way to reach me is email. I usually reply within a day.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Button asChild>
@@ -39,9 +39,6 @@ export function Contact() {
           <a className="inline-flex items-center gap-1.5 hover:text-foreground" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
             <LinkedinIcon className="h-3.5 w-3.5" /> linkedin.com/in/ayushsoni2212
           </a>
-          <a className="inline-flex items-center gap-1.5 hover:text-foreground" href={`tel:${profile.phone}`}>
-            <Phone className="h-3.5 w-3.5" /> {profile.phone}
-          </a>
         </div>
       </div>
     </section>
@@ -55,7 +52,7 @@ export function Footer() {
       <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-muted-foreground">
         <p>
           © {new Date().getFullYear()} {profile.name} ·{" "}
-          <a href={profile.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+          <a href={profile.website} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline-offset-4 hover:underline">
             {profile.websiteLabel}
           </a>
         </p>

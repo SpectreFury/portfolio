@@ -1,22 +1,9 @@
-import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { Experience } from "@/components/experience";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills-education";
-import { Contact, Footer } from "@/components/contact";
+import { Bento } from "@/components/bento";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <main className="mx-auto w-full max-w-3xl px-5">
-        <Hero />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
-        <Footer />
-      </main>
+    <div className="flex min-h-screen flex-col bg-background text-foreground lg:h-[100dvh] lg:min-h-0 lg:overflow-hidden">
+      <Bento />
     </div>
   );
 }

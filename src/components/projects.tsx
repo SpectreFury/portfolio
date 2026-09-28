@@ -3,7 +3,6 @@ import { ArrowUpRight, Clapperboard } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -61,9 +60,6 @@ export function Projects() {
                   </a>
                 </Button>
               </div>
-              <CardDescription className="font-mono text-xs">
-                {project.period}
-              </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
               <p className="text-sm leading-6 text-muted-foreground">

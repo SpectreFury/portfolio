@@ -22,7 +22,7 @@ export function Hero() {
       <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
         {profile.name}
       </h1>
-      <p className="mt-2 font-mono text-sm text-primary sm:text-base">
+      <p className="mt-2 font-mono text-sm font-semibold text-primary sm:text-base">
         {profile.role}
       </p>
 

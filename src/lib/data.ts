@@ -2,16 +2,15 @@ export const profile = {
   name: "Ayush Soni",
   role: "Software Development Engineer",
   tagline:
-    "I build distributed systems, async pipelines, and full-stack products — from AI reconciliation engines to adaptive video streaming.",
+    "A dev with love for all aspects of computer science. I love learning new technologies in my free time and making projects. I'm well versed with full stack development with multiple projects that are live and at scale.",
   location: "India",
   email: "soni.ayush.2212@gmail.com",
-  phone: "6267212293",
   website: "https://spectrefury.in",
   websiteLabel: "spectrefury.in",
   github: "https://github.com/SpectreFury",
   linkedin: "https://linkedin.com/in/ayushsoni2212",
   resume:
-    "https://drive.google.com/file/d/1EIqRpxXy1CmdTufVSQsEKVZ2AzTDYVXt/view?usp=sharing",
+    "https://drive.google.com/file/d/1fETcOlJkqq_QtI35WV6LB36El9bDSNdL/view?usp=sharing",
 };
 
 export type Experience = {
@@ -28,25 +27,24 @@ export const experience: Experience[] = [
     role: "Software Development Engineer",
     company: "Cointab Software Pvt Ltd",
     location: "Mumbai, MH",
-    period: "Sep 2025 – Apr 2026",
+    period: "Sep 2025 to Apr 2026",
     summary:
-      "AI-driven financial reconciliation platform — distributed async workers, custom queuing, containerized deploys.",
+      "AI-driven financial reconciliation platform with distributed async workers, custom queuing and containerized deploys.",
     stack: ["Node.js", "Next.js", "PostgreSQL", "AWS S3", "Docker"],
   },
   {
     role: "Software Development Engineer",
     company: "Veramasa",
     location: "Bhopal, MP",
-    period: "Jul 2025 – Sep 2025",
+    period: "Jul 2025 to Sep 2025",
     summary:
-      "Cross-platform mobile apps shipped to both app stores — Expo migration, global state, store pipelines.",
+      "Cross-platform mobile apps shipped to both app stores, covering Expo migration, global state and store pipelines.",
     stack: ["React Native", "Expo", "Redux Toolkit", "Zustand", "EAS"],
   },
 ];
 
 export type Project = {
   title: string;
-  period: string;
   blurb: string;
   stack: string[];
   github: string;
@@ -57,9 +55,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "AskPDF",
-    period: "Jul 2026 – Aug 2026",
     blurb:
-      "Document intelligence with RAG — real-time QnA over uploads, async chunking + embeddings via FastAPI + Celery.",
+      "Document intelligence with RAG for real-time QnA over uploads, with async chunking and embeddings using FastAPI and Celery.",
     stack: ["Next.js", "TypeScript", "FastAPI", "Celery", "PostgreSQL"],
     github: "https://github.com/SpectreFury",
     image: "/pdf-qa-workspace.png",
@@ -67,9 +64,8 @@ export const projects: Project[] = [
   },
   {
     title: "Distributed Video Streaming",
-    period: "Jun 2026 – Jul 2026",
     blurb:
-      "Adaptive HLS streaming — FFmpeg transcoding fanned out to BullMQ workers for low-latency, fault-tolerant processing.",
+      "Adaptive HLS streaming with FFmpeg transcoding fanned out to BullMQ workers for low-latency, fault-tolerant processing.",
     stack: ["Next.js", "Node.js", "MongoDB", "BullMQ", "Docker"],
     github: "https://github.com/SpectreFury",
   },
@@ -92,11 +88,4 @@ export const skills: { label: string; items: string[] }[] = [
     label: "Cloud & Tools",
     items: ["AWS (S3, EC2)", "BullMQ", "Celery", "Docker"],
   },
-];
-
-export const nav = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
 ];

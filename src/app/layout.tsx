@@ -18,7 +18,7 @@ const siteUrl = "https://spectrefury.in";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ayush Soni — Software Development Engineer",
+    default: "Ayush Soni, Software Development Engineer",
     template: "%s | Ayush Soni",
   },
   description:
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Ayush Soni — Software Development Engineer",
+    title: "Ayush Soni, Software Development Engineer",
     description:
       "Distributed systems, async workers, and full-stack products. Cointab, Veramasa, Zappian.",
     siteName: "Ayush Soni",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ayush Soni — Software Development Engineer",
+    title: "Ayush Soni, Software Development Engineer",
     description:
       "Distributed systems, async workers, and full-stack products.",
   },
