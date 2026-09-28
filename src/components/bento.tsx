@@ -216,10 +216,27 @@ export function Bento() {
 
             {/* Streaming */}
             <div className="flex min-w-0 flex-col border-t border-dashed border-border pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
-              <div className="flex flex-row items-center justify-center gap-1.5 rounded-md border border-dashed border-border bg-secondary/40 px-2 py-6 text-muted-foreground">
-                <Clapperboard className="h-3.5 w-3.5 shrink-0 text-primary" />
-                <p className="font-mono text-tiny">preview coming soon</p>
-              </div>
+              {streaming.image ? (
+                <a
+                  href={streaming.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block aspect-[16/9] shrink-0 overflow-hidden rounded-md border border-border"
+                >
+                  <Image
+                    src={streaming.image}
+                    alt={streaming.imageAlt ?? `${streaming.title} preview`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </a>
+              ) : (
+                <div className="flex flex-row items-center justify-center gap-1.5 rounded-md border border-dashed border-border bg-secondary/40 px-2 py-6 text-muted-foreground">
+                  <Clapperboard className="h-3.5 w-3.5 shrink-0 text-primary" />
+                  <p className="font-mono text-tiny">preview coming soon</p>
+                </div>
+              )}
               <div className="mt-1.5 flex items-start justify-between gap-1.5">
                 <p className="min-w-0 truncate text-cell font-semibold leading-tight">
                   {streaming.title}

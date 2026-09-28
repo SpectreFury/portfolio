@@ -68,6 +68,8 @@ export const projects: Project[] = [
       "Adaptive HLS streaming with FFmpeg transcoding fanned out to BullMQ workers for low-latency, fault-tolerant processing.",
     stack: ["Next.js", "Node.js", "MongoDB", "BullMQ", "Docker"],
     github: "https://github.com/SpectreFury/youtube-streaming",
+    image: "/streaming-app.png",
+    imageAlt: "Distributed video streaming app preview",
   },
 ];
 
